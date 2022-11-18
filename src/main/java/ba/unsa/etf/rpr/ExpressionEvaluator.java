@@ -61,7 +61,29 @@ public class ExpressionEvaluator {
      * @param s String to be validated
      */
 
-    public static void validate(String s){
+    public static void validate(String s) throws RuntimeException{
+
+        //checks if the expression is in the right format (blank spaces between every part of the expression)
+     /*   int expr = 0;
+        int ws = 0;
+        for(int i = 0; i < s.length(); i++){
+
+            if(s.charAt(i) != ' '){
+                while(s.charAt(i) >= 0 && s.charAt(i) <= 9) {//conditions based on ASCII code
+                    //if we come across a number, we need to count it aw a whole, and not its separate digits
+                    i = i + 1;
+                }
+                expr = expr + 1;
+            }
+            else ws = ws + 1;
+        }
+
+
+        if(ws < expr - 1) {
+            throw new RuntimeException("Invalid expression!");
+        }*/
+
+        //checks if the expression has valid operand / operators
 
         String [] p = parsedString(s);
         for(String x: p){
